@@ -1,0 +1,20 @@
+Requirements of sms
+
+1.Maintenance and reporting of student data including family, demographics and other records.
+2.Processing inquiries from prospective students.
+3.Manage the admission or registration processes.
+4.Enrolling new students and activation of online scheduling.
+5.Managing extra-curriculum activities and/or related services
+
+8.Monitoring & Registering of notes, remarks, incidents and actions (Educational CRM)
+9.Managing internal documents and workflows.
+10.Creating and managing timetables.
+11.Managing records of exams, assessments, grades and academic progress.
+12.Providing official grade reports
+13.Keeping records of absences, attendance & behavior.
+14.Provision of statistical reports.
+15.Communicating student data to parents or other person authorized by the student through a portal or via email, SMS or push notification.
+16.Special education/training.
+17.Human resources services.
+
+
