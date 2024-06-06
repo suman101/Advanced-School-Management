@@ -1,1 +1,1 @@
-# pwnbot_sms
+This is advanced School Management System in Django Rest Framework Backend.
