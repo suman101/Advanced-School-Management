@@ -65,7 +65,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     
 
 class SchoolAdminCreateSerializer(serializers.ModelSerializer): 
-    """krishna:
+    """views:
     serialize the school admin while creating"""
     confirm_password = serializers.CharField(
         max_length=68, min_length=6, write_only=True)
@@ -355,7 +355,7 @@ class SchoolInfoSerializer(serializers.ModelSerializer):
 #"email","username"
 
 class SchoolUpdateSerializer(serializers.ModelSerializer):
-    """krishna"""
+    """views"""
     slug = serializers.ReadOnlyField()
     class Meta:
         model=SchoolProfile

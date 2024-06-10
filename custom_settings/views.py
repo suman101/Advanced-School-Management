@@ -48,7 +48,7 @@ class UpdateCMSView(generics.RetrieveUpdateAPIView):
 
 
 class CreatePrivacyApiView(generics.CreateAPIView):
-    """Suds"""
+    """views"""
     serializer_class = PrivacySerializers
     queryset = PrivacyPolicy.objects.all()
     permission_classes = [IsNagarAdmin,]
@@ -67,13 +67,13 @@ class CreatePrivacyApiView(generics.CreateAPIView):
 
 
 class ListPrivacyApiView(generics.ListAPIView):
-    """Suds"""
+    """views"""
     serializer_class = PrivacySerializers
     queryset = PrivacyPolicy.objects.all()
 
 
 class UpdatePrivacyApiView(generics.RetrieveUpdateDestroyAPIView):
-    """Suds"""
+    """views"""
     serializer_class = PrivacySerializers
     queryset = PrivacyPolicy.objects.all()
     lookup_field = 'pk'
@@ -81,7 +81,7 @@ class UpdatePrivacyApiView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class CreateTermApiView(generics.CreateAPIView):
-    """Suds"""
+    """views"""
     serializer_class = TermSerializers
     queryset = TermsAndCondition.objects.all()
     permission_classes = [IsNagarAdmin,]
@@ -98,13 +98,13 @@ class CreateTermApiView(generics.CreateAPIView):
 
 
 class ListTermApiView(generics.ListAPIView):
-    """Suds"""
+    """views"""
     serializer_class = TermSerializers
     queryset = TermsAndCondition.objects.all()
 
 
 class UpdateTermApiView(generics.RetrieveUpdateDestroyAPIView):
-    """Suds"""
+    """views"""
     serializer_class = TermSerializers
     queryset = TermsAndCondition.objects.all()
     lookup_field = 'pk'

@@ -5,7 +5,7 @@ from custom_settings.models import BaseModel
 
 # Create your models here.
 class StudyMaterialQuerySet(models.QuerySet):
-    """suds"""
+    """models"""
 
     def not_approved(self):
         return self.filter(publish=True, approved=False)
@@ -17,7 +17,7 @@ class StudyMaterialQuerySet(models.QuerySet):
 
 
 class StudyMaterialManager(models.Manager):
-    """suds"""
+    """models"""
 
     def get_queryset(self):
         return StudyMaterialQuerySet(self.model, using=self._db)
@@ -32,7 +32,7 @@ class StudyMaterialManager(models.Manager):
 
 
 class StudyMaterial(BaseModel):
-    """suds"""
+    """models"""
     def get_upload_path(instance, filename):
         try: 
             return 'study_materials/{}/{}'.format(instance.published_by.school.school_name, filename)

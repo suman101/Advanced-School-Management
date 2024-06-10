@@ -13,7 +13,7 @@ class QuizManager(models.Manager):
 
 
 class Quiz(BaseModel):
-    """Suds"""
+    """models"""
     grade = models.ForeignKey(Grade,on_delete=models.CASCADE,null=True,blank=True)
     sub= models.ForeignKey(Subjects,on_delete=models.CASCADE,null=True,blank=True)
     teacher = models.ForeignKey(TeacherProfile,on_delete=models.SET_NULL,related_name='teacher_quiz',null=True,blank=True)
@@ -42,7 +42,7 @@ class Quiz(BaseModel):
 
 
 class Questions(BaseModel):
-    """Suds"""
+    """models"""
     question = models.TextField(blank=True)
     option1 = models.CharField(max_length=250)
     option2 = models.CharField(max_length=250)
@@ -61,7 +61,7 @@ class Questions(BaseModel):
 
 
 class AnswerSheet(BaseModel):
-    """Suds"""
+    """models"""
     user_id = models.PositiveSmallIntegerField(default=1)
     question = models.ForeignKey(Questions, on_delete=models.CASCADE, related_name="questionanswer")
     user_answer = models.CharField(max_length=150,null=True,blank=True)
@@ -72,7 +72,7 @@ class AnswerSheet(BaseModel):
 
 
 class AttemptedQuiz(BaseModel):
-    """Suds"""
+    """models"""
     user = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     mark_obtain = models.PositiveSmallIntegerField(default=0)
@@ -83,7 +83,7 @@ class AttemptedQuiz(BaseModel):
 
 
 class ShortQuestion(BaseModel):
-    """Suds"""
+    """models"""
     #quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     grade = models.ForeignKey(Grade,on_delete=models.CASCADE,null=True,blank=True)
     sub= models.ForeignKey(Subjects,on_delete=models.CASCADE,null=True,blank=True)
@@ -99,7 +99,7 @@ class ShortQuestion(BaseModel):
 
 
 class ShortAnswerSheet(BaseModel):
-    """Suds"""
+    """models"""
     def get_upload_path(instance, filename):
         return 'shortanswersheet/{}/{}'.format(instance.short_question.sub.school.school_name, filename)
 

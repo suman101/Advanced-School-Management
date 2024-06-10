@@ -18,13 +18,13 @@ from rest_framework.filters import SearchFilter,OrderingFilter
 from django.db.models.deletion import ProtectedError
 # Create your views here.
 class CategoryListView(generics.ListAPIView):
-    """suman -> krishna"""
+    """suman -> views"""
 
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     
 class CategoryCreateView(generics.CreateAPIView):
-    """suman -> krishna"""
+    """suman -> views"""
     permission_classes=(IsNagarAdmin,)
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -41,13 +41,13 @@ class CategoryCreateView(generics.CreateAPIView):
         
     
 class CategoryDetailView(generics.RetrieveUpdateAPIView):
-    """suman -> krishna"""
+    """suman -> views"""
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     lookup_field='pk'
     
 class CategoryDeleteView(generics.DestroyAPIView):
-    """suman -> krishna"""
+    """suman -> views"""
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     lookup_field='pk'
@@ -64,7 +64,7 @@ class CategoryDeleteView(generics.DestroyAPIView):
 
         
 class ResearchDetailListView(generics.ListAPIView):
-    """suman -> krishna"""
+    """suman -> views"""
     queryset = ResearchDetail.objects.all()
     serializer_class = ResearchListSerializer
     filter_backends = [SearchFilter,OrderingFilter]
@@ -74,7 +74,7 @@ class ResearchDetailListView(generics.ListAPIView):
 
 
 class PublishedResearchDetailListView(generics.ListAPIView):
-    """krishna"""
+    """views"""
 
     queryset = ResearchDetail.objects.not_approved()
     serializer_class = ResearchListSerializer
@@ -94,7 +94,7 @@ class PublishedResearchDetailListView(generics.ListAPIView):
 
 
 class DraftResearchDetailListView(generics.ListAPIView):
-    """krishna"""
+    """views"""
 
     queryset = ResearchDetail.objects.draft()
     serializer_class = ResearchListSerializer
@@ -116,7 +116,7 @@ class DraftResearchDetailListView(generics.ListAPIView):
         return qs
 
 class PublicResearchDetailListView(generics.ListAPIView):
-    """krishna"""
+    """views"""
 
     queryset = ResearchDetail.objects.public()
     serializer_class = ResearchListSerializer
@@ -127,7 +127,7 @@ class PublicResearchDetailListView(generics.ListAPIView):
 
 
 class ResearchDetailCreateView(generics.CreateAPIView):
-    """suman -> krishna"""
+    """suman -> views"""
 
     queryset = ResearchDetail.objects.all()
     serializer_class = ResearchDetailSerializer
@@ -150,7 +150,7 @@ class ResearchDetailCreateView(generics.CreateAPIView):
       
     
 class ResearchDetailDetailView(generics.RetrieveUpdateAPIView):
-    """suman - >krishna"""
+    """suman - >views"""
 
     queryset = ResearchDetail.objects.all()
     serializer_class = ResearchDetailSerializer
@@ -158,7 +158,7 @@ class ResearchDetailDetailView(generics.RetrieveUpdateAPIView):
 
     
 class ResearchDetailDeleteView(generics.DestroyAPIView):
-    """suman - >krishna"""
+    """suman - >views"""
     queryset = ResearchDetail.objects.all()
     serializer_class = ResearchDetailSerializer
     permission_classes = [IsNagarAdmin|IsSchoolAdmin,]
@@ -166,7 +166,7 @@ class ResearchDetailDeleteView(generics.DestroyAPIView):
 
     
 class PublicResearchDetailCardListView(generics.ListAPIView):
-    """suds"""
+    """views"""
 
     queryset = ResearchDetail.objects.public()
     serializer_class = ResearchListSerializer

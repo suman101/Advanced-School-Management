@@ -36,7 +36,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 
 class SchoolRegistrationView(GenericAPIView):
-    """krishna"""
+    """views"""
     serializer_class = SchoolRegisterSerializer
     permission_classes = (IsNagarAdmin,)
     def create_school_admin(self,data):
@@ -122,7 +122,7 @@ class SchoolListView(ListAPIView):
 
 
 class AllSchoolListView(ListAPIView):
-    """suds"""
+    """views"""
     serializer_class = SchoolListSerializer
     queryset = SchoolProfile.objects.all().order_by('school_name')
     filter_backends = [SearchFilter,OrderingFilter]
@@ -131,7 +131,7 @@ class AllSchoolListView(ListAPIView):
 
 
 class SchoolUpdateView(RetrieveUpdateAPIView):
-    """krishna"""
+    """views"""
     serializer_class = SchoolUpdateSerializer
     permission_classes = (IsNagarAdmin | IsSchoolAdmin,)
     queryset = SchoolProfile.objects.all()
@@ -162,7 +162,7 @@ class SchoolUpdateView(RetrieveUpdateAPIView):
     
 
 class TeacherRegistrationView(GenericAPIView):
-    """krishna"""
+    """views"""
     serializer_class = TeacherRegisterSerializer
     permission_classes = (IsSchoolAdmin,)
     def post(self, request):
@@ -206,7 +206,7 @@ class TeacherRegistrationView(GenericAPIView):
 
 
 class StudentRegistrationView(GenericAPIView):
-    """krishna"""
+    """views"""
     serializer_class = StudentRegisterSerializer
     permission_classes = (IsSchoolAdmin,)
     
@@ -566,7 +566,7 @@ class TeacherListView(ListAPIView):
 
 
 class AllTeacherListView(ListAPIView):
-    "suds"
+    "views"
     permission_classes = (IsNagarAdmin | IsSchoolAdmin,)
     serializer_class = TeacherListSerializer
     queryset = TeacherProfile.objects.all()

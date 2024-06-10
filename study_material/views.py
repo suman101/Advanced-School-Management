@@ -13,12 +13,12 @@ from rest_framework.filters import SearchFilter,OrderingFilter
 
 
 class StudyMaterialListView(ListAPIView):
-    """suds"""
+    """views"""
     queryset = StudyMaterial.objects.all()
     serializer_class = StudyMaterialListSerializer
 
 class PublishedStudyMaterialListView(ListAPIView):
-    """suds"""
+    """views"""
 
     queryset = StudyMaterial.objects.not_approved()
     serializer_class = StudyMaterialListSerializer
@@ -43,7 +43,7 @@ class PublishedStudyMaterialListView(ListAPIView):
 
 
 class DraftStudyMaterialListView(ListAPIView):
-    """suds"""
+    """views"""
 
     queryset = StudyMaterial.objects.draft()
     serializer_class = StudyMaterialListSerializer
@@ -68,7 +68,7 @@ class DraftStudyMaterialListView(ListAPIView):
 
 
 class PublicStudyMaterialListView(ListAPIView):
-    """suds"""
+    """views"""
 
     queryset = StudyMaterial.objects.public()
     serializer_class = StudyMaterialListSerializer
@@ -79,7 +79,7 @@ class PublicStudyMaterialListView(ListAPIView):
 
 
 class StudyMaterialCreateView(CreateAPIView):
-    """suds"""
+    """views"""
 
     queryset = StudyMaterial.objects.all()
     serializer_class = StudyMaterialSerializer
@@ -112,7 +112,7 @@ class StudyMaterialDeleteView(DestroyAPIView):
 
 
 class PublicStudyMaterialCardListView(ListAPIView):
-    """suds"""
+    """views"""
 
     queryset = StudyMaterial.objects.public()
     serializer_class = StudyMaterialListSerializer

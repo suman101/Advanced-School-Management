@@ -16,7 +16,7 @@ class BaseModel(models.Model):
 
 
 class PrivacyPolicy(BaseModel):
-    """Suds"""
+    """models"""
     content = RichTextField(config_name='awesome_ckeditor')
  
 
@@ -27,7 +27,7 @@ class PrivacyPolicy(BaseModel):
 
 
 class TermsAndCondition(BaseModel):
-    """Suds"""
+    """models"""
     content = RichTextField(config_name='awesome_ckeditor')
 
     def save(self,*args,**kwargs):
@@ -37,7 +37,7 @@ class TermsAndCondition(BaseModel):
 
 
 class SMTPSetting(models.Model):
-    """Suds"""
+    """models"""
     email_port = models.IntegerField(default=587)
     email_host_user = models.EmailField(blank=True, null=True)
     email_host_password = models.CharField(max_length=200, blank=True, null=True, help_text="Use the app password not your actual password for the security reason.")
@@ -55,7 +55,7 @@ class SMTPSetting(models.Model):
 
 
 class MailTemplate(models.Model):
-    """Suds"""
+    """models"""
     send_mail = RichTextField(help_text='required keywords: [EMAIL],[USERNAME],[PASSWORD]')
     # send_mail_password_reset = RichTextField(help_text='required keywords: [CODE],[EMAIL],[USERNAME]', null=True)
     # send_mail_verifed = RichTextField(help_text='required keywords: [EMAIL],[USERNAME]', null=True)
