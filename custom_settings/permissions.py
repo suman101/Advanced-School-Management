@@ -6,7 +6,7 @@ from authentication.models import SchoolProfile
 User = get_user_model()
 
 class IsNagarAdmin(permissions.BasePermission):
-    """"krishna 
+    """"permission class 
     checks either user is nagar admin or not
     """
 
@@ -18,7 +18,7 @@ class IsNagarAdmin(permissions.BasePermission):
             
 
 class IsSchoolAdmin(permissions.BasePermission):
-    """"krishna"""
+    """"permission class"""
     def has_permission(self, request, view):
         try:
             if request.user.user_type == 'SA':
@@ -28,7 +28,7 @@ class IsSchoolAdmin(permissions.BasePermission):
 
 
 class IsTeacher(permissions.BasePermission):
-    """"krishna"""
+    """"permission class"""
     def has_permission(self, request, view):
         try:
             if request.user.user_type == 'TE':
