@@ -39,7 +39,7 @@ class IsTeacher(permissions.BasePermission):
 
 
 class IsStudent(permissions.BasePermission):
-    """"suds"""
+    """"permission class"""
     def has_permission(self, request, view):
         try:
             if request.user.user_type == 'ST':
@@ -50,7 +50,7 @@ class IsStudent(permissions.BasePermission):
 
 
 class IsOwner(permissions.BasePermission):
-    """"suds"""
+    """"permission class"""
     def has_object_permission(self, request, view, obj):
         try:
             print(obj)
